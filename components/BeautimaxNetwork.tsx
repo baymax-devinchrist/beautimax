@@ -52,19 +52,9 @@ export default function BeautimaxNetwork(props: MyComponentProps) {
                             src={beautimaxAssets.network}
                             alt="Creator and commerce network visual across Indonesia"
                         />
-                        <svg className="network-connections" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
-                            <path className="network-path path-one" d="M35 278 C190 80 292 100 455 248" />
-                            <path className="network-path path-two" d="M445 248 C590 86 760 92 965 252" />
-                            <circle className="network-node node-one" cx="35" cy="278" r="6" />
-                            <circle className="network-node node-two" cx="455" cy="248" r="6" />
-                            <circle className="network-node node-three" cx="965" cy="252" r="6" />
-                            <circle className="network-particle particle-one" r="5">
-                                <animateMotion dur="3.8s" repeatCount="indefinite" path="M35 278 C190 80 292 100 455 248" />
-                            </circle>
-                            <circle className="network-particle particle-two" r="5">
-                                <animateMotion dur="4.2s" begin="1.1s" repeatCount="indefinite" path="M445 248 C590 86 760 92 965 252" />
-                            </circle>
-                        </svg>
+                        <span className="network-signal signal-one" aria-hidden="true" />
+                        <span className="network-signal signal-two" aria-hidden="true" />
+                        <span className="network-signal signal-three" aria-hidden="true" />
                     </div>
                 </div>
             </div>
