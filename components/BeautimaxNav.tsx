@@ -30,7 +30,7 @@ export default function BeautimaxNav(props: MyComponentProps) {
         startTransition(() => setOpen((v) => !v))
     }, [])
     return (
-        <header className="nav" style={{ position: "relative" }}>
+        <header className="nav">
             <div className="beautimax-shell">
                 <div className="nav-inner">
                     <a href="#home" className="brand mono" onClick={(event) => {
@@ -55,12 +55,19 @@ export default function BeautimaxNav(props: MyComponentProps) {
                     }}>
                         {buttonLabel}
                     </a>
-                    <button className="mobile-toggle" aria-label="Toggle menu" onClick={toggleMenu} type="button">
+                    <button
+                        className="mobile-toggle"
+                        aria-label="Toggle menu"
+                        aria-expanded={open}
+                        aria-controls="beautimax-mobile-navigation"
+                        onClick={toggleMenu}
+                        type="button"
+                    >
                         {open ? "Close" : "Menu"}
                     </button>
                 </div>
                 {open && (
-                    <nav className="drawer" aria-label="Mobile navigation">
+                    <nav id="beautimax-mobile-navigation" className="drawer" aria-label="Mobile navigation">
                         {navItems.map((item) => (
                             <a key={item.href} href={item.href} onClick={(event) => {
                                 event.preventDefault()
