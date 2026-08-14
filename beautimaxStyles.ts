@@ -18,6 +18,8 @@ h1,h2,h3,p,figure{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;min-width:240px;min-height:56px;padding:15px 24px;background:#111;color:#fff;border:1px solid #111;border-radius:0;text-decoration:none;font-size:14px;font-weight:700}
 .btn::after{content:"→";font-size:22px;font-weight:400;line-height:1}
 .line-icon{display:block;width:64px;height:64px;stroke:#161615;fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.framer-svg-icon{flex:0 0 auto}
+.framer-svg-icon svg{display:block;width:100%;height:100%;overflow:visible}
 
 .nav{position:sticky;top:0;z-index:60;background:rgba(244,241,233,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .nav-inner{height:92px;display:flex;align-items:center;justify-content:space-between;gap:32px}

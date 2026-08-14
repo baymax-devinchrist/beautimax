@@ -1,18 +1,10 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "../framerShim"
 import { pillars } from "../beautimaxData"
+import BeautimaxIcon from "./BeautimaxIcon"
 
 interface MyComponentProps {
     title: string
-}
-
-function PillarIcon() {
-    return (
-        <svg className="line-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="4" y="4" width="16" height="16" rx="2" />
-            <path d="M8 12h8M12 8v8" />
-        </svg>
-    )
 }
 
 /**
@@ -34,9 +26,9 @@ export default function BeautimaxAbout(props: MyComponentProps) {
                     </p>
                 </div>
                 <div className="pillars">
-                    {pillars.map((pillar) => (
+                    {pillars.map((pillar, index) => (
                         <article key={pillar.title} className="pillar">
-                            <PillarIcon />
+                            <BeautimaxIcon index={index + 4} />
                             <h3 className="card-title mono" style={{ marginTop: 10 }}>
                                 {pillar.title}
                             </h3>
