@@ -24,7 +24,7 @@ export default function BeautimaxHero(props: MyComponentProps) {
     return (
         <section id="home" className="beautimax-shell" style={{ position: "relative" }}>
             <div className="hero">
-                <div>
+                <div className="hero-copy">
                     <h1 className="h1">{heading}</h1>
                     <p className="lead muted">{body}</p>
                     <a
@@ -38,7 +38,7 @@ export default function BeautimaxHero(props: MyComponentProps) {
                         {ctaLabel}
                     </a>
                 </div>
-                <img className="img-full" src={beautimaxAssets.hero} alt="Beautimax hero serum product visual" />
+                <img className="img-full hero-visual" src={beautimaxAssets.hero} alt="Beautimax hero serum product visual" />
             </div>
         </section>
     )

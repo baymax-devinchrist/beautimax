@@ -1,7 +1,7 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "../framerShim"
 import { startTransition, useCallback, useState } from "react"
-import { navItems } from "../beautimaxData"
+import { beautimaxAssets, navItems } from "../beautimaxData"
 
 interface MyComponentProps {
     brandLabel: string
@@ -37,6 +37,7 @@ export default function BeautimaxNav(props: MyComponentProps) {
                         event.preventDefault()
                         smoothNavigate("#home")
                     }}>
+                        <img src={beautimaxAssets.monogram} alt="" aria-hidden="true" />
                         {brandLabel}
                     </a>
                     <nav className="nav-links" aria-label="Primary">

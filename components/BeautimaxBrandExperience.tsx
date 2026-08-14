@@ -29,6 +29,10 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
     const carouselRef = useRef<HTMLDivElement | null>(null)
     const isStatic = useIsStaticRenderer()
     const slideCount = useMemo(() => brandSlides.length, [])
+    const orderedSlides = useMemo(
+        () => brandSlides.map((_, offset) => brandSlides[(index + offset) % slideCount]),
+        [index, slideCount]
+    )
 
     useEffect(() => {
         if (isStatic) {
@@ -106,11 +110,13 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
         <section id="brands" className="section" style={{ position: "relative" }}>
             <div className="beautimax-shell">
                 <div className="brands-layout">
-                    <div>
+                    <div className="brands-copy">
                         <h2 className="section-title">{title}</h2>
                         <p className="card-copy" style={{ maxWidth: 700 }}>
                             {body}
                         </p>
+                    </div>
+                    <div className="brand-stage">
                         <div
                             ref={carouselRef}
                             className="carousel"
@@ -119,10 +125,9 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
                             onTouchStart={onTouchStart}
                             onTouchEnd={onTouchEnd}
                             aria-label="Brand experience carousel"
-                            style={{ marginTop: 18 }}
                         >
-                            <div className="slides" style={{ transform: `translateX(-${index * 100}%)` }}>
-                                {brandSlides.map((slide) => (
+                            <div className="slides">
+                                {orderedSlides.map((slide) => (
                                     <figure className="slide" key={slide.title} style={{ margin: 0 }}>
                                         <img className="img-full" src={slide.image} alt={slide.alt} />
                                     </figure>
@@ -151,10 +156,10 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
                                 </button>
                             </div>
                         </div>
+                        <aside className="phone-frame" aria-label="Phone commerce preview">
+                            <img src={beautimaxAssets.phone} alt="Phone preview of beauty commerce experience" />
+                        </aside>
                     </div>
-                    <aside className="phone-frame" aria-label="Phone commerce preview">
-                        <img src={beautimaxAssets.phone} alt="Phone preview of beauty commerce experience" />
-                    </aside>
                 </div>
             </div>
         </section>

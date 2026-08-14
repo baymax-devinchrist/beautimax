@@ -25,18 +25,22 @@ function StatIcon() {
 export default function BeautimaxMarket(props: MyComponentProps) {
     const { title } = props
     return (
-        <section id="market" className="section" style={{ position: "relative" }}>
+        <section id="market" className="section market-section">
             <div className="beautimax-shell">
-                <h2 className="market-title">{title}</h2>
-                <img className="img-full market-map" src={beautimaxAssets.map} alt="Indonesia map with market context" />
-                <div className="stats">
-                    {marketStats.map((item) => (
-                        <article key={item.label} className="stat">
-                            <StatIcon />
-                            <p className="stat-value">{item.value}</p>
-                            <p className="stat-label mono">{item.label}</p>
-                        </article>
-                    ))}
+                <div className="market-stage">
+                    <img className="img-full market-map" src={beautimaxAssets.map} alt="Indonesia map with market context" />
+                    <div className="market-overlay">
+                        <h2 className="market-title">{title}</h2>
+                        <div className="stats">
+                            {marketStats.map((item) => (
+                                <article key={item.label} className="stat">
+                                    <StatIcon />
+                                    <p className="stat-value">{item.value}</p>
+                                    <p className="stat-label mono">{item.label}</p>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -27,7 +27,7 @@ export default function BeautimaxPartnerships(props: MyComponentProps) {
                 <h2 className="section-title">{title}</h2>
                 <div className="partnerships" style={{ marginTop: 18 }}>
                     {partnershipCards.map((card) => (
-                        <article className="card" key={card.title}>
+                        <article className="partnership-card" key={card.title}>
                             <PartnershipIcon />
                             <h3 className="card-title mono" style={{ marginTop: 10 }}>
                                 {card.title}

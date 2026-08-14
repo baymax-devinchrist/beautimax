@@ -23,8 +23,8 @@ export default function BeautimaxAbout(props: MyComponentProps) {
     const { title } = props
     return (
         <section id="about" className="section" style={{ position: "relative" }}>
-            <div className="beautimax-shell grid-2">
-                <div>
+            <div className="beautimax-shell about-layout">
+                <div className="about-copy">
                     <h2 className="section-title">{title}</h2>
                     <p className="card-copy" style={{ marginTop: 16, maxWidth: 680 }}>
                         Beautimax is a beauty brand operator and Indonesia market enabler based in Jakarta. We connect market-entry support, creator commerce, marketplace operations, channel development, and fulfilment into one operating system.
@@ -35,7 +35,7 @@ export default function BeautimaxAbout(props: MyComponentProps) {
                 </div>
                 <div className="pillars">
                     {pillars.map((pillar) => (
-                        <article key={pillar.title} className="card">
+                        <article key={pillar.title} className="pillar">
                             <PillarIcon />
                             <h3 className="card-title mono" style={{ marginTop: 10 }}>
                                 {pillar.title}

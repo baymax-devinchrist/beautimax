@@ -14,11 +14,13 @@ interface MyComponentProps {
 export default function BeautimaxContact(props: MyComponentProps) {
     const { title, ctaLabel } = props
     return (
-        <section id="contact" className="section" style={{ position: "relative", paddingBottom: 0 }}>
+        <section id="contact" className="section contact-section">
             <div className="beautimax-shell">
                 <div className="contact-layout">
-                    <div>
+                    <div className="contact-copy">
                         <h2 className="section-title">{title}</h2>
+                    </div>
+                    <div className="contact-action">
                         <a className="btn" href="mailto:hello@beautimax.id" style={{ marginTop: 16 }}>
                             {ctaLabel}
                         </a>
@@ -35,10 +37,8 @@ export default function BeautimaxContact(props: MyComponentProps) {
                                 +62 815-8153-589
                             </a>
                         </div>
-                    </div>
-                    <div>
                         <img
-                            className="img-full"
+                            className="img-full contact-art"
                             src={beautimaxAssets.planes}
                             alt="Paper planes visual representing partnership outreach"
                         />
