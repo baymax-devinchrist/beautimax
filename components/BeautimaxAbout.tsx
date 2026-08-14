@@ -1,5 +1,5 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
-import { addPropertyControls, ControlType } from "framer"
+import { addPropertyControls, ControlType } from "../framerShim"
 import { pillars } from "../beautimaxData"
 
 interface MyComponentProps {

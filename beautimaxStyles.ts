@@ -68,6 +68,9 @@ h1,h2,h3,p{margin:0}
 @media (max-width:960px){
   html{scroll-padding-top:76px}
   .section,.hero{scroll-margin-top:76px}
+  .nav-links,.nav-cta{display:none}
+  .mobile-toggle{display:inline-flex}
+  .drawer{display:flex}
   .hero,.grid-2,.brands-layout,.contact-layout{grid-template-columns:1fr}
   .hero{align-items:start}
   .hero>div:first-child{max-width:780px}
@@ -83,9 +86,6 @@ h1,h2,h3,p{margin:0}
   .h1{font-size:clamp(38px,8.2vw,50px)}
   .market-title,.section-title,.network-title{font-size:clamp(32px,6.2vw,40px)}
   .lead{font-size:16px}
-  .nav-links,.nav-cta{display:none}
-  .mobile-toggle{display:inline-flex}
-  .drawer{display:flex}
   .cap-grid,.pillars{grid-template-columns:1fr}
   .carousel-meta{align-items:flex-start}
 }

@@ -1,5 +1,5 @@
 // User request: Verify the Beautimax code implementation file set and implement missing components using requested visuals, copied content, and responsive carousel behavior.
-import { addPropertyControls, ControlType, useIsStaticRenderer } from "framer"
+import { addPropertyControls, ControlType, useIsStaticRenderer } from "../framerShim"
 import {
     startTransition,
     useCallback,

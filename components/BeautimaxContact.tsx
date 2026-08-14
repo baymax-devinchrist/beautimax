@@ -1,5 +1,5 @@
 // User request: Verify the Beautimax code implementation file set and implement missing components using requested visuals, copied content, and responsive carousel behavior.
-import { addPropertyControls, ControlType } from "framer"
+import { addPropertyControls, ControlType } from "../framerShim"
 import { beautimaxAssets } from "../beautimaxData"
 
 interface MyComponentProps {
