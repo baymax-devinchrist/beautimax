@@ -1,6 +1,6 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "./framerShim"
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import { beautimaxStyles } from "./beautimaxStyles"
 import BeautimaxNav from "./components/BeautimaxNav"
 import BeautimaxHero from "./components/BeautimaxHero"
@@ -11,6 +11,7 @@ import BeautimaxNetwork from "./components/BeautimaxNetwork"
 import BeautimaxBrandExperience from "./components/BeautimaxBrandExperience"
 import BeautimaxPartnerships from "./components/BeautimaxPartnerships"
 import BeautimaxContact from "./components/BeautimaxContact"
+import BeautimaxWhatsApp from "./components/BeautimaxWhatsApp"
 
 interface MyComponentProps {
     showNav: boolean
@@ -24,10 +25,31 @@ export default function BeautimaxHome(props: MyComponentProps) {
     const { showNav } = props
     const css = useMemo(() => beautimaxStyles, [])
 
+    useEffect(() => {
+        if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") return
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+
+        const sections = document.querySelectorAll<HTMLElement>(".hero-section, .section")
+        sections.forEach((section) => section.classList.add("reveal-ready"))
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible")
+                        observer.unobserve(entry.target)
+                    }
+                })
+            },
+            { threshold: 0.12 }
+        )
+        sections.forEach((section) => observer.observe(section))
+        return () => observer.disconnect()
+    }, [])
+
     return (
         <main className="beautimax-root" style={{ position: "relative" }}>
             <style>{css}</style>
-            {showNav && <BeautimaxNav brandLabel="BEAUTIMAX" buttonLabel="Explore how we build" />}
+            {showNav && <BeautimaxNav brandLabel="BEAUTIMAX" buttonLabel="Start a conversation" />}
             <BeautimaxHero
                 heading="We build, operate, and grow beauty brands in Indonesia."
                 body="From new ventures to established global brands, we turn market potential into brands built for how Indonesia discovers, buys, and shares beauty."
@@ -46,6 +68,7 @@ export default function BeautimaxHome(props: MyComponentProps) {
                 title="Tell us where your brand should be in Indonesia."
                 ctaLabel="Start the conversation"
             />
+            <BeautimaxWhatsApp />
         </main>
     )
 }

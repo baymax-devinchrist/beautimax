@@ -1,6 +1,6 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "../framerShim"
-import { useCallback } from "react"
+import { useCallback, useEffect, useRef } from "react"
 import { beautimaxAssets } from "../beautimaxData"
 
 interface MyComponentProps {
@@ -15,15 +15,44 @@ interface MyComponentProps {
  */
 export default function BeautimaxHero(props: MyComponentProps) {
     const { heading, body, ctaLabel } = props
+    const sectionRef = useRef<HTMLElement | null>(null)
     const scrollToMarket = useCallback(() => {
         if (typeof window !== "undefined") {
             const node = document.querySelector("#market")
             if (node) node.scrollIntoView({ behavior: "smooth", block: "start" })
         }
     }, [])
+
+    useEffect(() => {
+        if (typeof window === "undefined") return
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+        let frame = 0
+        const update = () => {
+            frame = 0
+            const section = sectionRef.current
+            if (!section || window.innerWidth <= 680) return
+            const rect = section.getBoundingClientRect()
+            const progress = (window.innerHeight * 0.5 - (rect.top + rect.height * 0.5)) / window.innerHeight
+            section.style.setProperty("--hero-parallax", `${Math.max(-1, Math.min(1, progress)) * 42}px`)
+        }
+        const requestUpdate = () => {
+            if (!frame) frame = window.requestAnimationFrame(update)
+        }
+        update()
+        window.addEventListener("scroll", requestUpdate, { passive: true })
+        window.addEventListener("resize", requestUpdate)
+        return () => {
+            if (frame) window.cancelAnimationFrame(frame)
+            window.removeEventListener("scroll", requestUpdate)
+            window.removeEventListener("resize", requestUpdate)
+        }
+    }, [])
     return (
-        <section id="home" className="beautimax-shell" style={{ position: "relative" }}>
+        <section id="home" ref={sectionRef} className="beautimax-shell hero-section">
             <div className="hero">
+                <div className="hero-art" aria-hidden="true">
+                    <img className="img-full hero-visual" src={beautimaxAssets.hero} alt="" />
+                </div>
                 <div className="hero-copy">
                     <h1 className="h1">{heading}</h1>
                     <p className="lead muted">{body}</p>
@@ -38,7 +67,6 @@ export default function BeautimaxHero(props: MyComponentProps) {
                         {ctaLabel}
                     </a>
                 </div>
-                <img className="img-full hero-visual" src={beautimaxAssets.hero} alt="Beautimax hero serum product visual" />
             </div>
         </section>
     )
