@@ -16,7 +16,6 @@ export default function BeautimaxCapabilities(props: MyComponentProps) {
         <section id="capabilities" className="section capabilities-section">
             <div className="beautimax-shell">
                 <div className="cap-heading">
-                    <p className="section-kicker mono">02 / CONNECTED ENGINES</p>
                     <h2 className="section-title">{title}</h2>
                 </div>
                 <div className="cap-grid">

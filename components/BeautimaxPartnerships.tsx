@@ -17,7 +17,6 @@ export default function BeautimaxPartnerships(props: MyComponentProps) {
         <section id="partnerships" className="section" style={{ position: "relative" }}>
             <div className="beautimax-shell">
                 <div className="partnership-heading">
-                    <p className="section-kicker mono">05 / WAYS TO PARTNER</p>
                     <h2 className="section-title">{title}</h2>
                 </div>
                 <div className="partnerships">

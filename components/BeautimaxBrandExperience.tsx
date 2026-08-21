@@ -111,7 +111,6 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
             <div className="beautimax-shell">
                 <div className="brands-layout">
                     <div className="brands-copy">
-                        <p className="section-kicker mono">04 / BRAND EXPERIENCE</p>
                         <h2 className="section-title">{title}</h2>
                         <p className="card-copy" style={{ maxWidth: 700 }}>
                             {body}

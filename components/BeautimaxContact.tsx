@@ -18,7 +18,6 @@ export default function BeautimaxContact(props: MyComponentProps) {
             <div className="beautimax-shell">
                 <div className="contact-layout">
                     <div className="contact-copy">
-                        <p className="section-kicker mono">06 / START IN INDONESIA</p>
                         <h2 className="section-title">{title}</h2>
                         <p className="contact-subcopy">From market entry to daily execution, let&apos;s define the right operating model for your brand.</p>
                     </div>

@@ -17,7 +17,6 @@ export default function BeautimaxAbout(props: MyComponentProps) {
         <section id="about" className="section" style={{ position: "relative" }}>
             <div className="beautimax-shell about-layout">
                 <div className="about-copy">
-                    <p className="section-kicker mono">01 / OPERATING MODEL</p>
                     <h2 className="section-title">{title}</h2>
                     <p className="card-copy" style={{ marginTop: 16, maxWidth: 680 }}>
                         Beautimax is a beauty brand operator and Indonesia market enabler based in Jakarta. We connect market-entry support, creator commerce, marketplace operations, channel development, and fulfilment into one operating system.

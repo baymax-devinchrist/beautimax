@@ -16,7 +16,6 @@ export default function BeautimaxNetwork(props: MyComponentProps) {
         <section id="network" className="section chapter-screen network-section">
             <div className="beautimax-shell">
                 <div className="network-header">
-                    <p className="section-kicker mono">03 / DISTRIBUTED DISCOVERY</p>
                     <h2 className="network-title">{title}</h2>
                     <p className="card-copy" style={{ maxWidth: 680 }}>
                         A broad creator ecosystem supporting content activation, affiliate commerce, product education,
