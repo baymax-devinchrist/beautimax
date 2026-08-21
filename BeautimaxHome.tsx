@@ -12,7 +12,6 @@ import BeautimaxBrandExperience from "./components/BeautimaxBrandExperience"
 import BeautimaxPartnerships from "./components/BeautimaxPartnerships"
 import BeautimaxContact from "./components/BeautimaxContact"
 import BeautimaxWhatsApp from "./components/BeautimaxWhatsApp"
-import BeautimaxMarquee from "./components/BeautimaxMarquee"
 
 interface MyComponentProps {
     showNav: boolean
@@ -56,7 +55,6 @@ export default function BeautimaxHome(props: MyComponentProps) {
                 body="From new ventures to established global brands, we turn market potential into brands built for how Indonesia discovers, buys, and shares beauty."
                 ctaLabel="Explore how we build"
             />
-            <BeautimaxMarquee />
             <BeautimaxMarket title="Indonesia is a market built on scale, speed, and local nuance." />
             <BeautimaxAbout title="Behind the brands built for Indonesia." />
             <BeautimaxCapabilities title="One operating system. Four connected engines." />

@@ -37,7 +37,7 @@ function AnimatedStat({ value, delay }: { value: string; delay: number }) {
                 observer.disconnect()
                 timer = window.setTimeout(() => {
                     const start = performance.now()
-                    const duration = 1250
+                    const duration = 900
                     const tick = (now: number) => {
                         const progress = Math.min(1, (now - start) / duration)
                         const eased = 1 - Math.pow(1 - progress, 3)
@@ -79,7 +79,7 @@ export default function BeautimaxMarket(props: MyComponentProps) {
             if (!section || window.innerWidth <= 680) return
             const rect = section.getBoundingClientRect()
             const progress = (window.innerHeight * 0.5 - (rect.top + rect.height * 0.5)) / window.innerHeight
-            section.style.setProperty("--market-parallax", `${Math.max(-1, Math.min(1, progress)) * 34}px`)
+            section.style.setProperty("--market-parallax", `${Math.max(-1, Math.min(1, progress)) * 18}px`)
         }
         const requestUpdate = () => {
             if (!frame) frame = window.requestAnimationFrame(update)

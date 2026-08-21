@@ -33,7 +33,7 @@ export default function BeautimaxHero(props: MyComponentProps) {
             if (!section || window.innerWidth <= 680) return
             const rect = section.getBoundingClientRect()
             const progress = (window.innerHeight * 0.5 - (rect.top + rect.height * 0.5)) / window.innerHeight
-            section.style.setProperty("--hero-parallax", `${Math.max(-1, Math.min(1, progress)) * 42}px`)
+            section.style.setProperty("--hero-parallax", `${Math.max(-1, Math.min(1, progress)) * 24}px`)
         }
         const requestUpdate = () => {
             if (!frame) frame = window.requestAnimationFrame(update)

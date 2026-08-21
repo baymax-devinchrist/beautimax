@@ -35,7 +35,6 @@ export default function BeautimaxAbout(props: MyComponentProps) {
                                 <h3 className="card-title mono">{pillar.title}</h3>
                                 <p className="card-copy">{pillar.body}</p>
                             </div>
-                            <span className="pillar-arrow" aria-hidden="true">↗</span>
                         </article>
                     ))}
                 </div>

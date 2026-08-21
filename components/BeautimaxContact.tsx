@@ -22,7 +22,7 @@ export default function BeautimaxContact(props: MyComponentProps) {
                         <h2 className="section-title">{title}</h2>
                         <p className="contact-subcopy">From market entry to daily execution, let&apos;s define the right operating model for your brand.</p>
                     </div>
-                    <div className="contact-action">
+                    <div className="contact-details">
                         <a className="btn" href="mailto:hello@beautimax.id" style={{ marginTop: 16 }}>
                             {ctaLabel}
                         </a>
@@ -38,15 +38,16 @@ export default function BeautimaxContact(props: MyComponentProps) {
                             >
                                 +62 815-8153-589
                             </a>
+                            <span>JAKARTA, INDONESIA</span>
                         </div>
-                        <div className="contact-artwork">
-                            <img
-                                className="img-full contact-art"
-                                src={beautimaxAssets.planes}
-                                alt="Paper planes visual representing partnership outreach"
-                            />
-                            <img className="contact-monogram" src={beautimaxAssets.monogram} alt="" aria-hidden="true" />
-                        </div>
+                    </div>
+                    <div className="contact-artwork">
+                        <img
+                            className="img-full contact-art"
+                            src={beautimaxAssets.planes}
+                            alt="Paper planes visual representing partnership outreach"
+                        />
+                        <img className="contact-monogram" src={beautimaxAssets.monogram} alt="" aria-hidden="true" />
                     </div>
                 </div>
                 <div className="footer mono">

@@ -18,7 +18,6 @@ export default function BeautimaxCapabilities(props: MyComponentProps) {
                 <div className="cap-heading">
                     <p className="section-kicker mono">02 / CONNECTED ENGINES</p>
                     <h2 className="section-title">{title}</h2>
-                    <p className="cap-intro">Four disciplines, designed to move as one operating system.</p>
                 </div>
                 <div className="cap-grid">
                     {capabilities.map((item, index) => (

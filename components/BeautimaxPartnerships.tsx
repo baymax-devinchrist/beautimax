@@ -27,7 +27,6 @@ export default function BeautimaxPartnerships(props: MyComponentProps) {
                             <BeautimaxIcon index={index + 9} />
                             <h3 className="card-title mono">{card.title}</h3>
                             <p className="card-copy">{card.body}</p>
-                            <span className="partnership-link mono">EXPLORE STRUCTURE ↗</span>
                         </article>
                     ))}
                 </div>

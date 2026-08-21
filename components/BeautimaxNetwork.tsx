@@ -1,6 +1,5 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "../framerShim"
-import { useEffect, useRef, useState } from "react"
 import { beautimaxAssets } from "../beautimaxData"
 
 interface MyComponentProps {
@@ -13,26 +12,8 @@ interface MyComponentProps {
  */
 export default function BeautimaxNetwork(props: MyComponentProps) {
     const { title } = props
-    const sectionRef = useRef<HTMLElement | null>(null)
-    const [active, setActive] = useState(false)
-
-    useEffect(() => {
-        const section = sectionRef.current
-        if (!section || typeof IntersectionObserver === "undefined") return
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry?.isIntersecting) {
-                    setActive(true)
-                    observer.disconnect()
-                }
-            },
-            { threshold: 0.32 }
-        )
-        observer.observe(section)
-        return () => observer.disconnect()
-    }, [])
     return (
-        <section id="network" ref={sectionRef} className={`section chapter-screen network-section ${active ? "network-active" : ""}`}>
+        <section id="network" className="section chapter-screen network-section">
             <div className="beautimax-shell">
                 <div className="network-header">
                     <p className="section-kicker mono">03 / DISTRIBUTED DISCOVERY</p>
@@ -55,9 +36,6 @@ export default function BeautimaxNetwork(props: MyComponentProps) {
                             src={beautimaxAssets.network}
                             alt="Creator and commerce network visual across Indonesia"
                         />
-                        <span className="network-signal signal-one" aria-hidden="true" />
-                        <span className="network-signal signal-two" aria-hidden="true" />
-                        <span className="network-signal signal-three" aria-hidden="true" />
                     </div>
                 </div>
             </div>

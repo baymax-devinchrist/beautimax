@@ -75,7 +75,7 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
         if (typeof window === "undefined") return
         const timer = window.setInterval(() => {
             startTransition(() => setIndex((prevIndex) => (prevIndex + 1) % slideCount))
-        }, 2000)
+        }, 4500)
         return () => window.clearInterval(timer)
     }, [isInView, isStatic, slideCount])
 
