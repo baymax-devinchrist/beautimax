@@ -370,8 +370,8 @@ h1,h2,h3,p,figure{margin:0}
 .section{padding:clamp(90px,7vw,122px) 0}
 .section-title,.market-title,.network-title{font-size:clamp(50px,4.65vw,82px)}
 .section-kicker,.hero-kicker{color:rgba(16,16,15,.58);font-weight:600}
-.btn{background:#151514;border-color:#151514;box-shadow:none}
-.btn:hover{background:#253f46;border-color:#253f46;box-shadow:0 12px 28px rgba(22,35,38,.15)}
+.btn{background:#151514;border-color:#151514;border-radius:6px;box-shadow:none}
+.btn:hover{transform:none;background:#292925;border-color:#292925;box-shadow:0 8px 18px rgba(22,25,25,.12)}
 .nav-links a:hover,.nav-links a.active{color:#253f46}
 .nav-links a.active::after{background:#527986}
 .nav-links a:focus-visible,.brand:focus-visible,.nav-cta:focus-visible,.drawer a:focus-visible,.mobile-toggle:focus-visible{outline-color:rgba(49,95,117,.48)}
@@ -440,9 +440,9 @@ h1,h2,h3,p,figure{margin:0}
 .contact-layout{grid-template-columns:minmax(430px,.95fr) minmax(270px,.55fr) minmax(360px,.8fr);min-height:680px;gap:54px}
 .contact-copy .section-title{font-size:clamp(66px,5.5vw,104px)}
 .contact-subcopy{font-size:16px}
-.contact-details{position:relative;z-index:3;align-self:center}
-.contact-details .btn{width:100%;min-width:0;min-height:58px;margin:0!important}
-.contact-links{display:grid;gap:14px;margin-top:24px;font-size:12px}
+.contact-action{position:relative;z-index:3;display:block;align-self:center;padding-top:0}
+.contact-action .btn{width:100%;min-width:0;min-height:58px;margin:0!important}
+.contact-links{display:grid;gap:12px;margin-top:20px;font-size:15px;line-height:1.5}
 .contact-links span{color:rgba(16,16,15,.62)}
 .contact-artwork{align-self:stretch;min-height:500px;margin:0}
 .contact-art{right:-34%;bottom:-6%;width:155%;opacity:.78}
@@ -459,7 +459,7 @@ h1,h2,h3,p,figure{margin:0}
   .stat,.stat-1,.stat-2,.stat-3,.stat-4{min-height:150px}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid rgba(16,16,15,.18)}
   .cap-grid{gap:58px 34px}.capability{min-height:540px}.cap-image{height:330px}
   .brands-layout{grid-template-columns:1fr;gap:54px}.brands-copy .section-title,.brands-copy .card-copy{max-width:700px}.brand-stage{padding:30px 170px 28px 28px}.phone-frame{width:215px}
-  .contact-layout{grid-template-columns:1fr 1fr;gap:40px;padding-top:120px}.contact-copy{grid-column:1/-1}.contact-details{align-self:start}.contact-artwork{min-height:390px}.contact-art{right:-20%;width:125%}.contact-monogram{left:40%;top:12%}
+  .contact-layout{grid-template-columns:1fr 1fr;gap:40px;padding-top:120px}.contact-copy{grid-column:1/-1}.contact-action{display:block;align-self:start;padding-top:0}.contact-artwork{min-height:390px}.contact-art{right:-20%;width:125%}.contact-monogram{left:40%;top:12%}
 }
 
 @media (max-width:680px){
@@ -471,7 +471,7 @@ h1,h2,h3,p,figure{margin:0}
   .network-art{margin:-3% 0 0}
   #brands{padding-block:100px}.brand-stage{padding:22px 0 24px 20px;overflow:hidden}.slides{padding-right:20px}.phone-frame{width:68%;margin:-25px 2% 0 auto}.carousel-meta{padding-right:20px}
   .partnership-card,.partnership-card:nth-child(2),.partnership-card:nth-child(3){min-height:360px;background:#f4f1e9}.partnership-card::before{left:28px}.partnership-card .line-icon{margin-bottom:42px}
-  .contact-layout{grid-template-columns:1fr;gap:34px;padding:105px 0 35px}.contact-copy{grid-column:auto}.contact-details .btn{width:100%}.contact-artwork{min-height:340px}.contact-art{right:-34%;bottom:-8%;width:150%}.contact-monogram{left:38%;top:8%;width:72px;height:150px}
+  .contact-layout{grid-template-columns:1fr;gap:34px;padding:105px 0 35px}.contact-copy{grid-column:auto}.contact-action{display:block;padding-top:0}.contact-action .btn{width:100%}.contact-artwork{min-height:340px}.contact-art{right:-34%;bottom:-8%;width:150%}.contact-monogram{left:38%;top:8%;width:72px;height:150px}
 }
 
 @media (prefers-reduced-motion:reduce){.capability,.pillar,.partnership-card,.slide,.network-art{transition:none}}

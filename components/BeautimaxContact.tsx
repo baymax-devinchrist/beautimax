@@ -21,11 +21,11 @@ export default function BeautimaxContact(props: MyComponentProps) {
                         <h2 className="section-title">{title}</h2>
                         <p className="contact-subcopy">From market entry to daily execution, let&apos;s define the right operating model for your brand.</p>
                     </div>
-                    <div className="contact-details">
+                    <div className="contact-action">
                         <a className="btn" href="mailto:hello@beautimax.id" style={{ marginTop: 16 }}>
                             {ctaLabel}
                         </a>
-                        <div className="contact-links mono" style={{ fontSize: 12, marginTop: 18 }}>
+                        <div className="contact-links mono">
                             <a href="mailto:hello@beautimax.id" aria-label="Send email to hello@beautimax.id">
                                 hello@beautimax.id
                             </a>
@@ -37,7 +37,6 @@ export default function BeautimaxContact(props: MyComponentProps) {
                             >
                                 +62 815-8153-589
                             </a>
-                            <span>JAKARTA, INDONESIA</span>
                         </div>
                     </div>
                     <div className="contact-artwork">
