@@ -17,6 +17,7 @@ export default function BeautimaxAbout(props: MyComponentProps) {
         <section id="about" className="section" style={{ position: "relative" }}>
             <div className="beautimax-shell about-layout">
                 <div className="about-copy">
+                    <p className="section-kicker mono">01 / OPERATING MODEL</p>
                     <h2 className="section-title">{title}</h2>
                     <p className="card-copy" style={{ marginTop: 16, maxWidth: 680 }}>
                         Beautimax is a beauty brand operator and Indonesia market enabler based in Jakarta. We connect market-entry support, creator commerce, marketplace operations, channel development, and fulfilment into one operating system.
@@ -28,11 +29,13 @@ export default function BeautimaxAbout(props: MyComponentProps) {
                 <div className="pillars">
                     {pillars.map((pillar, index) => (
                         <article key={pillar.title} className="pillar">
+                            <span className="pillar-number mono">0{index + 1}</span>
                             <BeautimaxIcon index={index + 4} />
-                            <h3 className="card-title mono" style={{ marginTop: 10 }}>
-                                {pillar.title}
-                            </h3>
-                            <p className="card-copy">{pillar.body}</p>
+                            <div className="pillar-copy">
+                                <h3 className="card-title mono">{pillar.title}</h3>
+                                <p className="card-copy">{pillar.body}</p>
+                            </div>
+                            <span className="pillar-arrow" aria-hidden="true">↗</span>
                         </article>
                     ))}
                 </div>

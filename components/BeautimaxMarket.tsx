@@ -99,10 +99,12 @@ export default function BeautimaxMarket(props: MyComponentProps) {
                 <div className="market-stage">
                     <img className="img-full market-map" src={beautimaxAssets.map} alt="Indonesia map with market context" />
                     <div className="market-overlay">
+                        <p className="section-kicker mono market-kicker">INDONESIA / MARKET SIGNALS</p>
                         <h2 className="market-title">{title}</h2>
                         <div className="stats">
                             {marketStats.map((item, index) => (
-                                <article key={item.label} className="stat">
+                                <article key={item.label} className={`stat stat-${index + 1}`}>
+                                    <span className="stat-index mono">0{index + 1}</span>
                                     <BeautimaxIcon index={index} />
                                     <AnimatedStat value={item.value} delay={index * 120} />
                                     <p className="stat-label mono">{item.label}</p>

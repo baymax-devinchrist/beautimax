@@ -15,16 +15,28 @@ export default function BeautimaxCapabilities(props: MyComponentProps) {
     return (
         <section id="capabilities" className="section capabilities-section">
             <div className="beautimax-shell">
-                <h2 className="section-title">{title}</h2>
-                <div className="cap-grid" style={{ marginTop: 18 }}>
-                    {capabilities.map((item) => (
+                <div className="cap-heading">
+                    <p className="section-kicker mono">02 / CONNECTED ENGINES</p>
+                    <h2 className="section-title">{title}</h2>
+                    <p className="cap-intro">Four disciplines, designed to move as one operating system.</p>
+                </div>
+                <div className="cap-grid">
+                    {capabilities.map((item, index) => (
                         <article key={item.number} className="capability">
+                            <div className="cap-meta mono">
+                                <span>ENGINE {item.number}</span>
+                                <span>0{index + 1} / 04</span>
+                            </div>
                             <div className="cap-image">
                                 <img className="img-full" src={item.image} alt={item.alt} />
                             </div>
-                            <p className="eyebrow mono">{item.number}</p>
-                            <h3 className="card-title mono">{item.title}</h3>
-                            <p className="card-copy">{item.body}</p>
+                            <div className="cap-copy">
+                                <p className="eyebrow mono">{item.number}</p>
+                                <div>
+                                    <h3 className="card-title mono">{item.title}</h3>
+                                    <p className="card-copy">{item.body}</p>
+                                </div>
+                            </div>
                         </article>
                     ))}
                 </div>

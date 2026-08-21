@@ -111,10 +111,12 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
             <div className="beautimax-shell">
                 <div className="brands-layout">
                     <div className="brands-copy">
+                        <p className="section-kicker mono">04 / BRAND EXPERIENCE</p>
                         <h2 className="section-title">{title}</h2>
                         <p className="card-copy" style={{ maxWidth: 700 }}>
                             {body}
                         </p>
+                        <p className="brands-proof mono">REAL PRODUCTS / REAL CHANNELS / REAL SIGNALS</p>
                     </div>
                     <div className="brand-stage">
                         <div
@@ -127,9 +129,13 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
                             aria-label="Brand experience carousel"
                         >
                             <div className="slides">
-                                {orderedSlides.map((slide) => (
+                                {orderedSlides.map((slide, slideIndex) => (
                                     <figure className="slide" key={slide.title} style={{ margin: 0 }}>
                                         <img className="img-full" src={slide.image} alt={slide.alt} />
+                                        <figcaption className="slide-caption mono">
+                                            <span>0{slideIndex + 1}</span>
+                                            <span>{slide.title}</span>
+                                        </figcaption>
                                     </figure>
                                 ))}
                             </div>

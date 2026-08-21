@@ -50,23 +50,32 @@ export default function BeautimaxHero(props: MyComponentProps) {
     return (
         <section id="home" ref={sectionRef} className="beautimax-shell hero-section">
             <div className="hero">
+                <div className="hero-rail mono" aria-hidden="true">
+                    <span>BEAUTY BRAND OPERATOR</span>
+                    <span>JAKARTA / INDONESIA</span>
+                </div>
                 <div className="hero-art" aria-hidden="true">
                     <img className="img-full hero-visual" src={beautimaxAssets.hero} alt="" />
                 </div>
                 <div className="hero-copy">
+                    <p className="hero-kicker mono">MARKET ENABLER / OPERATING PARTNER</p>
                     <h1 className="h1">{heading}</h1>
                     <p className="lead muted">{body}</p>
-                    <a
-                        className="btn"
-                        href="#market"
-                        onClick={(event) => {
-                            event.preventDefault()
-                            scrollToMarket()
-                        }}
-                    >
-                        {ctaLabel}
-                    </a>
+                    <div className="hero-actions">
+                        <a
+                            className="btn"
+                            href="#market"
+                            onClick={(event) => {
+                                event.preventDefault()
+                                scrollToMarket()
+                            }}
+                        >
+                            {ctaLabel}
+                        </a>
+                        <span className="hero-note mono">ENTRY → COMMERCE → FULFILMENT</span>
+                    </div>
                 </div>
+                <p className="hero-coordinate mono" aria-hidden="true">BMX / 001 / ID</p>
             </div>
         </section>
     )

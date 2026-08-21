@@ -16,15 +16,18 @@ export default function BeautimaxPartnerships(props: MyComponentProps) {
     return (
         <section id="partnerships" className="section" style={{ position: "relative" }}>
             <div className="beautimax-shell">
-                <h2 className="section-title">{title}</h2>
-                <div className="partnerships" style={{ marginTop: 18 }}>
+                <div className="partnership-heading">
+                    <p className="section-kicker mono">05 / WAYS TO PARTNER</p>
+                    <h2 className="section-title">{title}</h2>
+                </div>
+                <div className="partnerships">
                     {partnershipCards.map((card, index) => (
                         <article className="partnership-card" key={card.title}>
+                            <span className="partnership-number mono">0{index + 1}</span>
                             <BeautimaxIcon index={index + 9} />
-                            <h3 className="card-title mono" style={{ marginTop: 10 }}>
-                                {card.title}
-                            </h3>
+                            <h3 className="card-title mono">{card.title}</h3>
                             <p className="card-copy">{card.body}</p>
+                            <span className="partnership-link mono">EXPLORE STRUCTURE ↗</span>
                         </article>
                     ))}
                 </div>
