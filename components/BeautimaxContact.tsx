@@ -20,23 +20,23 @@ export default function BeautimaxContact(props: MyComponentProps) {
                     <div className="contact-copy">
                         <h2 className="section-title">{title}</h2>
                         <p className="contact-subcopy">From market entry to daily execution, let&apos;s define the right operating model for your brand.</p>
-                    </div>
-                    <div className="contact-action">
-                        <a className="btn" href="mailto:hello@beautimax.id">
-                            {ctaLabel}
-                        </a>
-                        <div className="contact-links mono">
-                            <a href="mailto:hello@beautimax.id" aria-label="Send email to hello@beautimax.id">
-                                hello@beautimax.id
+                        <div className="contact-action">
+                            <a className="btn" href="mailto:hello@beautimax.id">
+                                {ctaLabel}
                             </a>
-                            <a
-                                href="https://wa.me/628158153589"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="Open WhatsApp chat with Beautimax"
-                            >
-                                +62 815-8153-589
-                            </a>
+                            <div className="contact-links mono">
+                                <a href="mailto:hello@beautimax.id" aria-label="Send email to hello@beautimax.id">
+                                    hello@beautimax.id
+                                </a>
+                                <a
+                                    href="https://wa.me/628158153589"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="Open WhatsApp chat with Beautimax"
+                                >
+                                    +62 815-8153-589
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div className="contact-artwork">

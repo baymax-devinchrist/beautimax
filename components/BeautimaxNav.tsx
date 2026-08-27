@@ -3,6 +3,8 @@ import { addPropertyControls, ControlType } from "../framerShim"
 import { startTransition, useCallback, useEffect, useState } from "react"
 import { beautimaxAssets, navItems } from "../beautimaxData"
 
+const primaryNavItems = navItems.filter((item) => item.href !== "#contact")
+
 interface MyComponentProps {
     brandLabel: string
     buttonLabel: string
@@ -38,7 +40,7 @@ export default function BeautimaxNav(props: MyComponentProps) {
             },
             { rootMargin: "-28% 0px -58% 0px", threshold: [0, 0.1, 0.35] }
         )
-        navItems.forEach((item) => {
+        primaryNavItems.forEach((item) => {
             const section = document.querySelector(item.href)
             if (section) observer.observe(section)
         })
@@ -73,7 +75,7 @@ export default function BeautimaxNav(props: MyComponentProps) {
                         {brandLabel}
                     </a>
                     <nav className="nav-links" aria-label="Primary">
-                        {navItems.map((item) => (
+                        {primaryNavItems.map((item) => (
                             <a className={activeHref === item.href ? "active" : ""} key={item.href} href={item.href} onClick={(event) => {
                                 event.preventDefault()
                                 smoothNavigate(item.href)
@@ -101,7 +103,7 @@ export default function BeautimaxNav(props: MyComponentProps) {
                 </div>
                 {open && (
                     <nav id="beautimax-mobile-navigation" className="drawer" aria-label="Mobile navigation">
-                        {navItems.map((item) => (
+                        {primaryNavItems.map((item) => (
                             <a key={item.href} href={item.href} onClick={(event) => {
                                 event.preventDefault()
                                 smoothNavigate(item.href)

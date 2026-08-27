@@ -29,7 +29,7 @@ export default function BeautimaxHome(props: MyComponentProps) {
         if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") return
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
 
-        const sections = document.querySelectorAll<HTMLElement>(".hero-section, .section")
+        const sections = document.querySelectorAll<HTMLElement>(".hero-section, .section:not(.market-section)")
         sections.forEach((section) => section.classList.add("reveal-ready"))
         const observer = new IntersectionObserver(
             (entries) => {

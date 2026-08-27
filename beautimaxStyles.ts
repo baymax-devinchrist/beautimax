@@ -504,15 +504,15 @@ h1,h2,h3,p,figure{margin:0}
 .stat-value{font-size:clamp(46px,3.8vw,68px)}
 .stat-label{font-size:clamp(13px,.92vw,15px)}
 
-.about-layout{grid-template-columns:minmax(390px,.86fr) minmax(520px,1.14fr);gap:clamp(82px,7.5vw,132px)}
-.about-copy .section-title{margin-bottom:34px}
-.about-copy p.about-intro{max-width:620px;margin:0;font-size:clamp(17px,1.12vw,19px);line-height:1.68}
-.about-copy p.about-audience{max-width:620px;margin:28px 0 0;font-size:clamp(17px,1.16vw,20px);font-weight:700;line-height:1.6}
-.pillars{padding:10px 0}
-.pillar{grid-template-columns:60px minmax(0,1fr);min-height:142px;padding:25px 14px;gap:20px;align-items:center}
+.about-layout{grid-template-columns:minmax(390px,.86fr) minmax(520px,1.14fr);gap:clamp(94px,8vw,144px)}
+.about-copy .section-title{margin-bottom:38px}
+.about-copy p.about-intro{max-width:610px;margin:0;font-size:clamp(17px,1.12vw,19px);line-height:1.72}
+.about-copy p.about-audience{max-width:610px;margin:32px 0 0;font-size:clamp(17px,1.16vw,20px);font-weight:700;line-height:1.62}
+.pillars{padding:14px 0}
+.pillar{grid-template-columns:62px minmax(0,1fr);min-height:148px;padding:27px 16px;gap:22px;align-items:center}
 .pillar .line-icon{width:56px;height:56px}
-.pillar-copy .card-title{margin-bottom:11px;font-size:17px}
-.pillar-copy .card-copy{font-size:17px;line-height:1.58}
+.pillar-copy .card-title{margin-bottom:12px;font-size:17px}
+.pillar-copy .card-copy{font-size:17px;line-height:1.6}
 
 .capabilities-section{padding-block:clamp(88px,6.5vw,112px)}
 .cap-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:68px}
@@ -551,44 +551,44 @@ h1,h2,h3,p,figure{margin:0}
 .partnership-card .card-copy{font-size:17px;line-height:1.6}
 
 .contact-section{padding:0}
-.contact-layout{grid-template-columns:minmax(430px,1.02fr) minmax(270px,.58fr) minmax(350px,.78fr);min-height:690px;padding:62px 0 34px;gap:clamp(34px,3.2vw,54px);align-items:center}
-.contact-copy .section-title{max-width:680px}
-.contact-subcopy{max-width:470px;margin-top:30px;font-size:17px;line-height:1.62}
-.contact-action{align-self:center;padding:26px;border:1px solid rgba(16,16,15,.18);background:rgba(244,241,233,.42)}
+.contact-layout{grid-template-columns:minmax(470px,.92fr) minmax(520px,1.08fr);min-height:720px;padding:64px 0 36px;gap:clamp(64px,6vw,108px);align-items:center}
+.contact-copy .section-title{max-width:640px;font-size:clamp(54px,4.7vw,82px);line-height:.92}
+.contact-subcopy{max-width:500px;margin-top:28px;font-size:17px;line-height:1.64}
+.contact-action{max-width:440px;margin-top:36px;padding:25px;border:1px solid rgba(16,16,15,.18);background:rgba(244,241,233,.42)}
 .contact-action .btn{width:100%;min-height:60px;margin:0!important}
 .contact-links{gap:14px;margin-top:22px;font-size:16px;line-height:1.55}
-.contact-artwork{align-self:stretch;min-height:500px}
-.contact-art{right:-30%;bottom:-2%;width:148%}
-.contact-monogram{left:30%;top:24%;width:100px;height:210px}
+.contact-artwork{align-self:stretch;min-height:570px;display:flex;align-items:center;justify-content:center}
+.contact-art{left:50%;right:auto;top:50%;bottom:auto;width:122%;transform:translate(-50%,-47%)}
+.contact-monogram{left:50%;top:50%;width:120px;height:250px;transform:translate(-50%,-53%)}
 
 @media (max-width:1280px){
   .hero{padding-inline:6vw}.hero-copy{max-width:53%}.hero-art{top:12%;right:-2%;width:61%}
   .cap-grid{gap:18px}.cap-image{height:230px}.capability .card-title{font-size:18px}.capability .card-copy{font-size:16px}
-  .contact-layout{grid-template-columns:minmax(350px,.95fr) minmax(250px,.62fr) minmax(300px,.74fr);gap:28px}.contact-action{padding:22px}.contact-art{right:-38%;width:165%}
+  .contact-layout{grid-template-columns:minmax(410px,.95fr) minmax(440px,1.05fr);gap:52px}.contact-action{padding:22px}.contact-art{width:132%}
 }
 
 @media (max-width:980px){
   .section{padding:86px 0}
   .hero{min-height:900px;padding:118px 6vw 58px;align-items:flex-start}.hero-copy{max-width:79%}.h1{font-size:clamp(54px,7.8vw,70px)}.hero-art{top:39%;right:-10%;bottom:-5%;width:74%}
   .market-stage{height:870px}.market-map{height:100%;object-fit:contain}.market-overlay{min-height:100%;padding:66px 0 28px}
-  .about-layout{gap:62px}.about-copy .section-title{margin-bottom:30px}.pillars{grid-template-columns:1fr 1fr;padding:0}.pillar{min-height:150px}
+  .about-layout{gap:66px}.about-copy .section-title{margin-bottom:32px}.pillars{grid-template-columns:1fr 1fr;padding:0}.pillar{min-height:158px;padding:24px 16px}
   .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 30px}.capability{min-height:0}.cap-image{height:310px}
   .network-header .card-copy{margin-top:22px!important}.network-visual{margin-top:48px}
   .brands-layout{gap:58px}.brand-stage{padding:28px 164px 26px 26px;background:transparent}.phone-frame{width:205px}
   .partnership-card,.partnership-card:nth-child(2),.partnership-card:nth-child(3){min-height:320px;padding:26px 22px}.partnership-card .line-icon{margin:18px 0 26px}
-  .contact-layout{grid-template-columns:1fr 1fr;gap:34px;padding:96px 0 36px}.contact-copy{grid-column:1/-1}.contact-action{padding:22px}.contact-artwork{min-height:390px}.contact-art{right:-22%;width:128%}.contact-monogram{left:39%;top:13%}
+  .contact-layout{grid-template-columns:minmax(0,1.04fr) minmax(300px,.96fr);gap:38px;padding:88px 0 36px}.contact-copy{grid-column:auto}.contact-copy .section-title{font-size:clamp(48px,7.2vw,66px)}.contact-action{max-width:100%;margin-top:30px;padding:22px}.contact-artwork{min-height:470px}.contact-art{width:138%}.contact-monogram{width:92px;height:195px}
 }
 
 @media (max-width:680px){
   .section{padding:78px 0}.card-copy{font-size:16px}
   .hero{min-height:830px;padding:104px 22px 46px}.hero-copy{max-width:100%}.h1{font-size:clamp(42px,11.5vw,51px);line-height:.97}.lead{font-size:17px;line-height:1.52}.hero-art{top:56%;right:-12%;bottom:-3%;width:112%}
   .market-stage{height:980px}.market-overlay{min-height:100%;padding:62px 0 22px}.market-map{top:220px;left:0;width:100%;height:390px;object-fit:contain;transform:none}.stat,.stat-1,.stat-2,.stat-3,.stat-4{min-height:155px;padding:16px 10px}.stat-value{font-size:36px}.stat-label{font-size:10px}
-  .about-layout{gap:50px}.about-copy .section-title{margin-bottom:26px}.about-copy p.about-intro{font-size:16px;line-height:1.66}.about-copy p.about-audience{margin-top:24px;font-size:17px;line-height:1.58}.pillar{grid-template-columns:50px 1fr;min-height:132px;padding:21px 0;gap:15px}.pillar .line-icon{width:46px;height:46px}.pillar-copy .card-title{font-size:15px}.pillar-copy .card-copy{font-size:15px}
+  .about-layout{gap:54px}.about-copy .section-title{margin-bottom:28px}.about-copy p.about-intro{font-size:16px;line-height:1.7}.about-copy p.about-audience{margin-top:26px;font-size:17px;line-height:1.62}.pillar{grid-template-columns:50px 1fr;min-height:136px;padding:22px 0;gap:16px}.pillar .line-icon{width:46px;height:46px}.pillar-copy .card-title{font-size:15px}.pillar-copy .card-copy{font-size:15px}
   .capabilities-section{padding-block:78px}.cap-grid{grid-template-columns:1fr;gap:54px;margin-top:46px}.capability{min-height:0}.cap-image{height:270px}.capability .card-copy{font-size:16px}
   .network-header .card-copy{font-size:16px}.network-visual{margin-top:42px}.network-art-frame{width:148%;margin-left:-24%}.network-art{margin-top:-3%}
   #brands{padding-block:86px}.brands-layout{gap:42px}.brands-copy .card-copy{margin-top:26px;font-size:16px}.brand-stage{padding:22px 0 24px 18px;background:transparent}.slides{padding-right:18px}.phone-frame{width:66%;margin:-22px 2% 0 auto}.carousel-meta{padding-right:18px}
   .partnerships{margin-top:44px}.partnership-card,.partnership-card:nth-child(2),.partnership-card:nth-child(3){min-height:0;padding:26px}.partnership-card .line-icon{margin:18px 0 26px}.partnership-card .card-copy{font-size:16px}
-  .contact-layout{grid-template-columns:1fr;gap:32px;padding:86px 0 30px}.contact-copy{grid-column:auto}.contact-subcopy{margin-top:24px;font-size:16px}.contact-action{padding:20px}.contact-links{font-size:15px}.contact-artwork{min-height:330px}.contact-art{right:-32%;bottom:-6%;width:148%}.contact-monogram{left:38%;top:9%;width:72px;height:150px}
+  .contact-layout{grid-template-columns:1fr;gap:38px;padding:82px 0 30px}.contact-copy{grid-column:auto}.contact-copy .section-title{font-size:clamp(43px,12.5vw,58px)}.contact-subcopy{margin-top:24px;font-size:16px}.contact-action{max-width:none;margin-top:28px;padding:20px}.contact-links{font-size:15px}.contact-artwork{min-height:360px}.contact-art{width:146%}.contact-monogram{width:78px;height:164px}
 }
 
 @media (prefers-reduced-motion:reduce){.capability,.pillar,.partnership-card,.slide,.network-art{transition:none}}
