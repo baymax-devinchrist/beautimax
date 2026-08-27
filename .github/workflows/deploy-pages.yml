@@ -1,9 +1,9 @@
-name: Deploy Beautimax preview to GitHub Pages
+name: Deploy Beautimax to GitHub Pages
 
 on:
   push:
     branches:
-      - codex/github-pages-preview
+      - main
   workflow_dispatch:
 
 permissions:

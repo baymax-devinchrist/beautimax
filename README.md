@@ -1,16 +1,31 @@
-# Beautimax Website
+# Beautimax
 
-Standalone React/Vite version of the approved Beautimax Framer export.
+Official website for Beautimax.
+
+Production: https://beautimax.id
+
+## Stack
+
+- React
+- TypeScript
+- Vite
+- GitHub Pages
 
 ## Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-## GitHub Pages
+## Production build
 
-The `codex/github-pages-preview` branch deploys automatically to:
+```bash
+pnpm build
+```
 
-https://baymax-devinchrist.github.io/beautimax/
+## Deployment
+
+GitHub Pages deploys automatically from `main`.
+
+The `framer-export` branch is retained as the original Framer source and archive.
