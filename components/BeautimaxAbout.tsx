@@ -18,10 +18,10 @@ export default function BeautimaxAbout(props: MyComponentProps) {
             <div className="beautimax-shell about-layout">
                 <div className="about-copy">
                     <h2 className="section-title">{title}</h2>
-                    <p className="card-copy" style={{ marginTop: 16, maxWidth: 680 }}>
+                    <p className="card-copy about-intro">
                         Beautimax is a beauty brand operator and Indonesia market enabler based in Jakarta. We connect market-entry support, creator commerce, marketplace operations, channel development, and fulfilment into one operating system.
                     </p>
-                    <p className="card-copy" style={{ marginTop: 12, maxWidth: 680 }}>
+                    <p className="card-copy about-audience">
                         We work with global brands entering Indonesia, founders building from the ground up, and local brands ready for their next stage of growth.
                     </p>
                 </div>

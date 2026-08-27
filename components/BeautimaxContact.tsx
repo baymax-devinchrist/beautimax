@@ -22,7 +22,7 @@ export default function BeautimaxContact(props: MyComponentProps) {
                         <p className="contact-subcopy">From market entry to daily execution, let&apos;s define the right operating model for your brand.</p>
                     </div>
                     <div className="contact-action">
-                        <a className="btn" href="mailto:hello@beautimax.id" style={{ marginTop: 16 }}>
+                        <a className="btn" href="mailto:hello@beautimax.id">
                             {ctaLabel}
                         </a>
                         <div className="contact-links mono">
