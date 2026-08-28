@@ -496,6 +496,7 @@ h1,h2,h3,p,figure{margin:0}
 
 .market-stage{height:clamp(760px,90svh,900px);min-height:0;overflow:visible}
 .market-map{position:absolute;inset:0;width:100%;height:100%;min-height:0;object-fit:contain;object-position:center;transform:translate3d(0,var(--market-parallax),0)}
+.market-map-mobile{display:none}
 .market-overlay{min-height:100%}
 .market-overlay{padding:clamp(58px,6vh,76px) 0 34px}
 .market-title{max-width:1120px}
@@ -591,6 +592,133 @@ h1,h2,h3,p,figure{margin:0}
   #brands{padding-block:82px}.brands-layout{gap:38px}.brands-copy .section-title{max-width:330px;font-size:40px}.brands-copy .card-copy{margin-top:24px;font-size:16px}.brand-stage{padding:16px 0 22px;background:transparent}.slides{padding-right:18px}.phone-frame{width:74%;margin:-30px -2% 0 auto}.carousel-meta{display:none}
   .partnerships{margin-top:44px}.partnership-card,.partnership-card:nth-child(2),.partnership-card:nth-child(3){min-height:0;padding:26px}.partnership-card .line-icon{margin:18px 0 26px}.partnership-card .card-copy{font-size:16px}
   .contact-layout{grid-template-columns:1fr;gap:34px;padding:78px 0 28px}.contact-copy{grid-column:auto}.contact-copy .section-title{font-size:clamp(43px,12.5vw,58px)}.contact-subcopy{margin-top:24px;font-size:16px}.contact-cta{width:100%;margin-top:28px!important}.contact-artwork{min-height:350px}.contact-art{width:140%}.contact-monogram{width:78px;height:164px}
+}
+
+/* Dedicated mobile recomposition — desktop and tablet rules above remain unchanged. */
+@media (max-width:680px){
+  html,body{min-width:0;overflow-x:clip}
+  html{scroll-padding-top:68px}
+  .beautimax-root{overflow-x:clip}
+  .beautimax-shell{width:100%;padding-inline:22px}
+  .section{min-height:0;padding:74px 0}
+  .section-title,.market-title,.network-title{font-size:clamp(32px,9.2vw,38px);line-height:1;letter-spacing:-.05em;text-wrap:balance}
+  .card-copy{font-size:15.5px;line-height:1.62}
+  .btn{width:auto;min-width:0;min-height:50px;padding:12px 18px;gap:24px;font-size:13px}
+
+  .nav{padding-top:7px}
+  .nav .beautimax-shell{padding-inline:12px}
+  .nav-inner,.nav.is-compact .nav-inner{height:58px;padding-inline:14px;gap:10px;border-radius:12px}
+  .brand{gap:9px;font-size:14px;letter-spacing:.14em}
+  .brand img{width:20px;height:38px}
+  .nav-links,.nav-cta{display:none}
+  .mobile-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:48px;min-height:48px;padding:0 4px;font-size:11px}
+  .drawer{margin-top:6px;padding:8px 18px 14px;border-radius:14px}
+  .drawer a{min-height:48px;font-size:12px}
+
+  .hero-section{padding-inline:22px}
+  .hero{display:flex;min-height:0;padding:92px 0 16px;flex-direction:column;align-items:stretch}
+  .hero::after{display:none}
+  .hero-copy{order:1;max-width:none;padding:0}
+  .h1{max-width:100%;margin-bottom:22px;font-size:clamp(36px,10.4vw,40px);line-height:1.01;letter-spacing:-.055em}
+  .lead{max-width:100%;margin-bottom:24px;font-size:16px;line-height:1.58}
+  .hero-actions{display:flex;justify-content:flex-start}
+  .hero-actions .btn{width:auto;min-width:210px}
+  .hero-art{position:relative;order:2;inset:auto;width:100%;height:auto;margin:14px 0 0;transform:none;will-change:auto}
+  .hero-visual{width:100%;max-width:100%;height:auto;object-fit:contain}
+
+  .market-section{padding:70px 0 72px}
+  .market-stage{display:block;height:auto;min-height:0;overflow:visible}
+  .market-stage>.market-map{display:none}
+  .market-overlay{position:relative;display:flex;min-height:0;padding:0;flex-direction:column}
+  .market-title{order:0;margin:0 0 22px;font-size:clamp(32px,9.2vw,36px)}
+  .market-map-mobile{display:block;order:1;width:calc(100% + 44px);max-width:none;height:auto;margin:0 -22px;object-fit:contain;object-position:center}
+  .stats{position:relative;order:2;inset:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 0 0;padding:0;border-top:1px solid rgba(16,16,15,.2);background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .stat,.stat-1,.stat-2,.stat-3,.stat-4{position:relative;inset:auto;display:flex;width:auto;min-height:124px;padding:18px 12px;justify-content:center;border:0;border-right:1px solid rgba(16,16,15,.16);border-bottom:1px solid rgba(16,16,15,.16);background:transparent}
+  .stat:nth-child(2n){border-right:0}
+  .stat:nth-last-child(-n+2){border-bottom:0}
+  .stat-value{margin-bottom:9px;font-size:clamp(27px,8vw,30px);line-height:1}
+  .stat-label{font-size:11px;line-height:1.35;letter-spacing:.06em}
+
+  #about{padding-block:76px;background:#f4f1e9}
+  .about-layout{display:grid;grid-template-columns:1fr;gap:36px}
+  .about-copy .section-title{max-width:100%;margin:0 0 24px}
+  .about-copy p.about-intro{max-width:100%;margin:0;font-size:16px;line-height:1.62}
+  .about-copy p.about-audience{max-width:100%;margin:18px 0 0;font-size:16px;line-height:1.6}
+  .pillars{display:grid;grid-template-columns:1fr;padding:0;border-top:1px solid rgba(16,16,15,.18)}
+  .pillar{display:grid;grid-template-columns:44px minmax(0,1fr);min-height:0;padding:22px 0;gap:16px;align-items:start;border:0;border-bottom:1px solid rgba(16,16,15,.18)}
+  .pillar:hover{padding-inline:0;background:transparent}
+  .pillar .line-icon{width:42px;height:42px;margin:0}
+  .pillar-copy .card-title{margin:1px 0 8px;font-size:16px;line-height:1.15}
+  .pillar-copy .card-copy{font-size:14.5px;line-height:1.55}
+
+  .capabilities-section{padding-block:76px}
+  .cap-heading .section-title{max-width:100%}
+  .cap-grid{display:grid;grid-template-columns:1fr;gap:62px;margin-top:40px}
+  .capability{min-height:0;padding:16px 0 0;border-top:2px solid var(--cap-accent);border-bottom:0}
+  .cap-image{width:78%;height:220px;margin:10px auto 14px;aspect-ratio:auto}
+  .cap-image img{width:100%;max-width:100%;height:100%;object-fit:contain}
+  .cap-copy{display:grid;grid-template-columns:38px minmax(0,1fr);gap:8px}
+  .capability .eyebrow{font-size:20px}
+  .capability .card-title{margin-bottom:10px;font-size:18px;line-height:1.12}
+  .capability .card-copy{font-size:15px;line-height:1.55}
+
+  .network-section{padding-block:76px}
+  .network-header .card-copy{max-width:100%!important;margin:20px 0 0!important;font-size:16px;line-height:1.62}
+  .network-visual{display:grid;grid-template-columns:1fr;gap:24px;margin-top:34px}
+  .network-proof{padding:0}
+  .network-stat{margin:0 0 10px;font-size:clamp(58px,17vw,68px);line-height:.94}
+  .network-label{max-width:280px;font-size:17px;line-height:1.4}
+  .network-art-frame{width:100%;margin:0;overflow:visible}
+  .network-art{width:100%;max-width:100%;margin:0;transform:none}
+
+  #brands{padding-block:76px}
+  .brands-layout{display:grid;grid-template-columns:1fr;gap:30px}
+  .brands-copy .section-title{max-width:100%;font-size:clamp(30px,8.8vw,34px);line-height:1.04}
+  .brands-copy .card-copy{max-width:100%;margin-top:18px;font-size:16px;line-height:1.62}
+  .brand-stage{padding:0;overflow:visible;background:transparent;border:0}
+  .carousel{overflow:visible}
+  .slides{display:flex;gap:12px;overflow-x:auto;padding:0 22px 6px 0;scroll-snap-type:x mandatory;scroll-padding-left:0;scrollbar-width:none}
+  .slides::-webkit-scrollbar{display:none}
+  .slide{flex:0 0 min(84vw,360px);scroll-snap-align:start}
+  .slide img{width:100%;height:auto;aspect-ratio:.82/1;object-fit:cover}
+  .carousel-meta{display:flex;justify-content:flex-start;margin-top:14px;padding:0}
+  .carousel-nav{gap:8px}
+  .icon-btn{width:44px;height:44px;font-size:18px}
+  .dot{width:10px;height:10px}
+  .phone-frame{position:relative;inset:auto;width:70%;margin:28px auto 0;filter:drop-shadow(0 18px 26px rgba(0,0,0,.14))}
+
+  .partnership-heading .section-title{max-width:100%}
+  .partnerships{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+  .partnership-card,.partnership-card:nth-child(2),.partnership-card:nth-child(3){width:100%;min-height:0;padding:20px;border-width:1px}
+  .partnership-card::before{left:20px;width:56px}
+  .partnership-card .line-icon{width:42px;height:42px;margin:2px 0 18px}
+  .partnership-card .card-title{margin-bottom:10px;font-size:18px;line-height:1.14}
+  .partnership-card .card-copy{font-size:14.5px;line-height:1.55}
+
+  .contact-section{min-height:0;padding:0}
+  .contact-layout{display:flex;min-height:0;padding:76px 0 0;gap:34px;flex-direction:column;align-items:stretch}
+  .contact-copy .section-title{max-width:100%;font-size:clamp(34px,10vw,38px);line-height:1}
+  .contact-subcopy{max-width:100%;margin-top:20px;font-size:16px;line-height:1.6}
+  .contact-cta{width:min(100%,290px);min-height:52px;margin-top:24px!important}
+  .contact-artwork{position:relative;min-height:280px;margin-top:2px;display:flex;align-items:center;justify-content:center}
+  .contact-art{position:absolute;inset:50% auto auto 50%;width:100%;max-width:100%;transform:translate(-50%,-48%)}
+  .contact-monogram{position:absolute;left:50%;top:50%;width:72px;height:152px;transform:translate(-50%,-55%)}
+  .footer{min-height:0;padding:18px 0 24px;font-size:9px;line-height:1.5}
+
+  .whatsapp-float{right:14px;bottom:14px;width:50px;height:50px;padding:0;justify-content:center}
+  .whatsapp-label{display:none}
+  .whatsapp-status{left:33px;top:5px}
+}
+
+@media (max-width:360px){
+  .beautimax-shell,.hero-section{padding-inline:20px}
+  .nav .beautimax-shell{padding-inline:10px}
+  .h1{font-size:36px}
+  .hero-actions .btn{min-width:0}
+  .market-map-mobile{width:calc(100% + 40px);margin-inline:-20px}
+  .cap-image{width:82%;height:200px}
+  .slide{flex-basis:84vw}
+  .contact-artwork{min-height:250px}
 }
 
 @media (prefers-reduced-motion:reduce){.capability,.pillar,.partnership-card,.slide,.network-art{transition:none}}
