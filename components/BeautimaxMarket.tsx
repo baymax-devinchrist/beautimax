@@ -112,6 +112,11 @@ export default function BeautimaxMarket(props: MyComponentProps) {
                     <img className="img-full market-map" src={beautimaxAssets.map} alt="Indonesia map with market context" />
                     <div className="market-overlay">
                         <h2 className="market-title">{title}</h2>
+                        <img
+                            className="img-full market-map-mobile"
+                            src={beautimaxAssets.map}
+                            alt="Indonesia map with market context"
+                        />
                         <div className="stats">
                             {marketStats.map((item, index) => (
                                 <article key={item.label} className={`stat stat-${index + 1}`}>
