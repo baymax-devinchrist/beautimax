@@ -1,7 +1,8 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "./framerShim"
-import { useEffect, useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { beautimaxStyles } from "./beautimaxStyles"
+import { translations, type Language } from "./beautimaxTranslations"
 import BeautimaxNav from "./components/BeautimaxNav"
 import BeautimaxHero from "./components/BeautimaxHero"
 import BeautimaxMarket from "./components/BeautimaxMarket"
@@ -24,6 +25,17 @@ interface MyComponentProps {
 export default function BeautimaxHome(props: MyComponentProps) {
     const { showNav } = props
     const css = useMemo(() => beautimaxStyles, [])
+    const [language, setLanguage] = useState<Language>(() => {
+        if (typeof window === "undefined") return "en"
+        const saved = window.localStorage.getItem("beautimax-language")
+        return saved === "id" || saved === "zh" ? saved : "en"
+    })
+    const copy = translations[language]
+
+    useEffect(() => {
+        if (typeof document !== "undefined") document.documentElement.lang = copy.documentLanguage
+        if (typeof window !== "undefined") window.localStorage.setItem("beautimax-language", language)
+    }, [copy.documentLanguage, language])
 
     useEffect(() => {
         if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") return
@@ -47,28 +59,62 @@ export default function BeautimaxHome(props: MyComponentProps) {
     }, [])
 
     return (
-        <main className="beautimax-root" style={{ position: "relative" }}>
+        <main className="beautimax-root" lang={copy.documentLanguage} style={{ position: "relative" }}>
             <style>{css}</style>
-            {showNav && <BeautimaxNav brandLabel="BEAUTIMAX" buttonLabel="Start a conversation" />}
+            {showNav && (
+                <BeautimaxNav
+                    brandLabel={copy.nav.brandLabel}
+                    buttonLabel={copy.nav.ctaLabel}
+                    items={copy.nav.items}
+                    language={language}
+                    languageLabel={copy.languageLabel}
+                    menuLabel={copy.menuLabel}
+                    closeLabel={copy.closeLabel}
+                    primaryNavigationLabel={copy.primaryNavigationLabel}
+                    mobileNavigationLabel={copy.mobileNavigationLabel}
+                    toggleMenuLabel={copy.toggleMenuLabel}
+                    onLanguageChange={setLanguage}
+                />
+            )}
             <BeautimaxHero
-                heading="We build, operate, and grow beauty brands in Indonesia."
-                body="From new ventures to established global brands, we turn market potential into brands built for how Indonesia discovers, buys, and shares beauty."
-                ctaLabel="Explore how we build"
+                heading={copy.hero.heading}
+                body={copy.hero.body}
+                ctaLabel={copy.hero.ctaLabel}
             />
-            <BeautimaxMarket title="Indonesia is a market built on scale, speed, and local nuance." />
-            <BeautimaxAbout title="Behind the brands built for Indonesia." />
-            <BeautimaxCapabilities title="One operating system. Four connected engines." />
-            <BeautimaxNetwork title="Beauty discovery is distributed. Our network is built for it." />
+            <BeautimaxMarket title={copy.market.title} stats={copy.market.stats} imageAlt={copy.market.imageAlt} />
+            <BeautimaxAbout
+                title={copy.about.title}
+                intro={copy.about.intro}
+                audience={copy.about.audience}
+                pillars={copy.about.pillars}
+            />
+            <BeautimaxCapabilities title={copy.capabilities.title} items={copy.capabilities.items} />
+            <BeautimaxNetwork
+                title={copy.network.title}
+                body={copy.network.body}
+                statLabel={copy.network.statLabel}
+                imageAlt={copy.network.imageAlt}
+            />
             <BeautimaxBrandExperience
-                title="We operate in the market, not outside it."
-                body="Our experience operating beauty brands gives us a direct view of how consumers respond to products, positioning, content, pricing, channels, and repeat purchase."
+                title={copy.brands.title}
+                body={copy.brands.body}
+                slides={copy.brands.slides}
+                carouselLabel={copy.brands.carouselLabel}
+                previousLabel={copy.brands.previousLabel}
+                nextLabel={copy.brands.nextLabel}
+                slideLabel={copy.brands.slideLabel}
+                phoneLabel={copy.brands.phoneLabel}
+                phoneAlt={copy.brands.phoneAlt}
             />
-            <BeautimaxPartnerships title="Built around the opportunity, not a fixed package." />
+            <BeautimaxPartnerships title={copy.partnerships.title} cards={copy.partnerships.cards} />
             <BeautimaxContact
-                title="Tell us where your brand should be in Indonesia."
-                ctaLabel="Start the conversation"
+                title={copy.contact.title}
+                body={copy.contact.body}
+                ctaLabel={copy.contact.ctaLabel}
+                artworkAlt={copy.contact.artworkAlt}
+                footer={copy.contact.footer}
             />
-            <BeautimaxWhatsApp />
+            <BeautimaxWhatsApp label={copy.whatsappLabel} />
         </main>
     )
 }
