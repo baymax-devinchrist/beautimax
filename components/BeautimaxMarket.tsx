@@ -1,10 +1,12 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "../framerShim"
 import { useEffect, useMemo, useRef, useState } from "react"
-import { beautimaxAssets, marketStats } from "../beautimaxData"
+import { beautimaxAssets, type MarketStat } from "../beautimaxData"
 
 interface MyComponentProps {
     title: string
+    stats: MarketStat[]
+    imageAlt: string
 }
 
 function AnimatedStat({ value, delay }: { value: string; delay: number }) {
@@ -78,7 +80,7 @@ function AnimatedStat({ value, delay }: { value: string; delay: number }) {
  * @framerSupportedLayoutHeight auto
  */
 export default function BeautimaxMarket(props: MyComponentProps) {
-    const { title } = props
+    const { title, stats, imageAlt } = props
     const sectionRef = useRef<HTMLElement | null>(null)
 
     useEffect(() => {
@@ -109,16 +111,16 @@ export default function BeautimaxMarket(props: MyComponentProps) {
         <section id="market" ref={sectionRef} className="section market-section chapter-screen">
             <div className="beautimax-shell">
                 <div className="market-stage">
-                    <img className="img-full market-map" src={beautimaxAssets.map} alt="Indonesia map with market context" />
+                    <img className="img-full market-map" src={beautimaxAssets.map} alt={imageAlt} />
                     <div className="market-overlay">
                         <h2 className="market-title">{title}</h2>
                         <img
                             className="img-full market-map-mobile"
                             src={beautimaxAssets.map}
-                            alt="Indonesia map with market context"
+                            alt={imageAlt}
                         />
                         <div className="stats">
-                            {marketStats.map((item, index) => (
+                            {stats.map((item, index) => (
                                 <article key={item.label} className={`stat stat-${index + 1}`}>
                                     <AnimatedStat value={item.value} delay={index * 120} />
                                     <p className="stat-label mono">{item.label}</p>
