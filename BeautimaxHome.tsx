@@ -80,6 +80,7 @@ export default function BeautimaxHome(props: MyComponentProps) {
                 heading={copy.hero.heading}
                 body={copy.hero.body}
                 ctaLabel={copy.hero.ctaLabel}
+                ctaHref={language === "id" ? "#capabilities" : "#market"}
             />
             <BeautimaxMarket title={copy.market.title} stats={copy.market.stats} imageAlt={copy.market.imageAlt} />
             <BeautimaxAbout
