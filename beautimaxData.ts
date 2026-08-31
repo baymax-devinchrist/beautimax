@@ -42,17 +42,17 @@ export const marketStats: MarketStat[] = [
 ]
 
 export const pillars: Pillar[] = [
-    { title: "MARKET ENTRY", body: "We help market readiness and launch with local operating precision." },
-    { title: "BRAND BUILDING", body: "We build differentiated brands that resonate and scale" },
-    { title: "CREATOR COMMERCE", body: "We power discovery through creators, affiliates, content, and commerce loops." },
-    { title: "CHANNEL OPERATIONS", body: "We operate across marketplace, retail, and daily commercial execution." },
-    { title: "FULFILMENT", body: "We provide warehousing and deliver reliably, efficiently." },
+    { title: "MARKET ENTRY", body: "We prepare brands for launch and market entry with precise local execution." },
+    { title: "BRAND BUILDING", body: "We build differentiated brands designed to resonate and scale." },
+    { title: "CREATOR COMMERCE", body: "We turn discovery into demand through creators, affiliates, content, and commerce." },
+    { title: "CHANNEL OPERATIONS", body: "We operate across marketplaces, retail, and the channels where consumers buy." },
+    { title: "FULFILMENT", body: "We provide reliable warehousing, fulfilment, and delivery." },
 ]
 
 export const capabilities: Capability[] = [
-    { number: "01", title: "MARKET ENTRY", body: "From foreign brand to local market readiness.", image: beautimaxAssets.marketEntry, alt: "Market entry operating readiness visual" },
-    { number: "02", title: "SOCIAL & CREATOR COMMERCE", body: "Build attention through the people who shape beauty discovery.", image: beautimaxAssets.creator, alt: "Social and creator commerce visual" },
-    { number: "03", title: "MARKETPLACE & CHANNELS", body: "Turn brand presence into daily commercial execution.", image: beautimaxAssets.marketplace, alt: "Marketplace and channels operations visual" },
+    { number: "01", title: "MARKET ENTRY", body: "From international brand to local market readiness.", image: beautimaxAssets.marketEntry, alt: "Market entry operating readiness visual" },
+    { number: "02", title: "SOCIAL & CREATOR COMMERCE", body: "Build attention through the people shaping beauty discovery.", image: beautimaxAssets.creator, alt: "Social and creator commerce visual" },
+    { number: "03", title: "MARKETPLACE & CHANNELS", body: "Turn brand presence into everyday sales and channel execution.", image: beautimaxAssets.marketplace, alt: "Marketplace and channels operations visual" },
     { number: "04", title: "LOGISTICS & FULFILMENT", body: "Keep the brand moving after every order.", image: beautimaxAssets.logistics, alt: "Logistics and fulfilment operations visual" },
 ]
 
@@ -64,7 +64,7 @@ export const brandSlides: BrandSlide[] = [
 ]
 
 export const partnershipCards: PartnershipCard[] = [
-    { title: "OPERATING PARTNERSHIP", body: "Beautimax co-operate existing brands with our infrastructure and expertise to accelerate growth" },
-    { title: "MARKET PARTNERSHIP", body: "We help global brands enter and scale in Indonesia with a local team, playbook, and execution engine" },
-    { title: "ENABLER PARTNERSHIP", body: "We enable new brands and partner on ventures with long-term market potential." },
+    { title: "OPERATING PARTNERSHIP", body: "We work alongside existing brands, bringing Beautimax’s infrastructure and operating expertise to accelerate growth." },
+    { title: "MARKET PARTNERSHIP", body: "We help global brands enter and scale in Indonesia through a local team, proven operating playbook, and hands-on execution." },
+    { title: "ENABLER PARTNERSHIP", body: "We build new brands and partner on ventures with long-term market potential." },
 ]
