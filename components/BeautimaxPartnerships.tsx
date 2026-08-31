@@ -1,10 +1,11 @@
 // User request: Verify the Beautimax code implementation file set and implement missing components using requested visuals, copied content, and responsive carousel behavior.
 import { addPropertyControls, ControlType } from "../framerShim"
-import { partnershipCards } from "../beautimaxData"
+import { type PartnershipCard } from "../beautimaxData"
 import BeautimaxIcon from "./BeautimaxIcon"
 
 interface MyComponentProps {
     title: string
+    cards: PartnershipCard[]
 }
 
 /**
@@ -12,7 +13,7 @@ interface MyComponentProps {
  * @framerSupportedLayoutHeight auto
  */
 export default function BeautimaxPartnerships(props: MyComponentProps) {
-    const { title } = props
+    const { title, cards } = props
     return (
         <section id="partnerships" className="section" style={{ position: "relative" }}>
             <div className="beautimax-shell">
@@ -20,7 +21,7 @@ export default function BeautimaxPartnerships(props: MyComponentProps) {
                     <h2 className="section-title">{title}</h2>
                 </div>
                 <div className="partnerships">
-                    {partnershipCards.map((card, index) => (
+                    {cards.map((card, index) => (
                         <article className="partnership-card" key={card.title}>
                             <BeautimaxIcon index={index + 9} />
                             <h3 className="card-title mono">{card.title}</h3>
