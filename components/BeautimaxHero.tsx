@@ -7,6 +7,7 @@ interface MyComponentProps {
     heading: string
     body: string
     ctaLabel: string
+    ctaHref?: string
 }
 
 /**
@@ -14,14 +15,14 @@ interface MyComponentProps {
  * @framerSupportedLayoutHeight auto
  */
 export default function BeautimaxHero(props: MyComponentProps) {
-    const { heading, body, ctaLabel } = props
+    const { heading, body, ctaLabel, ctaHref = "#market" } = props
     const sectionRef = useRef<HTMLElement | null>(null)
-    const scrollToMarket = useCallback(() => {
+    const scrollToTarget = useCallback(() => {
         if (typeof window !== "undefined") {
-            const node = document.querySelector("#market")
+            const node = document.querySelector(ctaHref)
             if (node) node.scrollIntoView({ behavior: "smooth", block: "start" })
         }
-    }, [])
+    }, [ctaHref])
 
     useEffect(() => {
         if (typeof window === "undefined") return
@@ -59,10 +60,10 @@ export default function BeautimaxHero(props: MyComponentProps) {
                     <div className="hero-actions">
                         <a
                             className="btn"
-                            href="#market"
+                            href={ctaHref}
                             onClick={(event) => {
                                 event.preventDefault()
-                                scrollToMarket()
+                                scrollToTarget()
                             }}
                         >
                             {ctaLabel}
