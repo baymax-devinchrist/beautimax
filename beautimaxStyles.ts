@@ -727,4 +727,30 @@ h1,h2,h3,p,figure{margin:0}
 }
 
 @media (prefers-reduced-motion:reduce){.capability,.pillar,.partnership-card,.slide,.network-art{transition:none}}
+
+/* Bahasa Indonesia copy needs additional breathing room without shifting English or Chinese. */
+.beautimax-root[lang="id"] .cap-grid{margin-top:88px}
+.beautimax-root[lang="id"] .network-header .card-copy{margin-top:34px!important}
+.beautimax-root[lang="id"] .network-visual{margin-top:78px}
+.beautimax-root[lang="id"] .contact-layout{gap:clamp(88px,8vw,140px);padding-top:84px}
+.beautimax-root[lang="id"] .contact-copy .section-title{font-size:clamp(50px,4.2vw,72px);line-height:.98}
+.beautimax-root[lang="id"] .contact-subcopy{margin-top:32px}
+
+@media (max-width:980px){
+  .beautimax-root[lang="id"] .cap-grid{margin-top:68px}
+  .beautimax-root[lang="id"] .network-visual{margin-top:60px}
+  .beautimax-root[lang="id"] .contact-layout{gap:46px;padding-top:96px}
+  .beautimax-root[lang="id"] .contact-copy .section-title{font-size:clamp(44px,6.5vw,60px)}
+}
+
+@media (max-width:680px){
+  .beautimax-root[lang="id"] .cap-grid{margin-top:56px}
+  .beautimax-root[lang="id"] .network-header .card-copy{margin-top:26px!important}
+  .beautimax-root[lang="id"] .network-visual{margin-top:44px}
+  .beautimax-root[lang="id"] .contact-layout{gap:42px;padding-top:88px}
+  .beautimax-root[lang="id"] .contact-copy .section-title{font-size:clamp(32px,9vw,36px);line-height:1.08}
+  .beautimax-root[lang="id"] .contact-subcopy{margin-top:26px}
+  .beautimax-root[lang="id"] .contact-cta{margin-top:30px!important}
+  .beautimax-root[lang="id"] .contact-artwork{margin-top:12px}
+}
 `
