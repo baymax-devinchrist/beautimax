@@ -18,7 +18,7 @@ export default function BeautimaxWhatsApp() {
     return (
         <a
             className={`whatsapp-float ${visible ? "is-visible" : ""}`}
-            href="https://wa.me/628158153589"
+            href="https://wa.me/6285880011990"
             target="_blank"
             rel="noreferrer"
             aria-label="Chat with Beautimax on WhatsApp"
