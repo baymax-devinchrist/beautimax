@@ -1,9 +1,10 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "../framerShim"
-import { capabilities } from "../beautimaxData"
+import { type Capability } from "../beautimaxData"
 
 interface MyComponentProps {
     title: string
+    items: Capability[]
 }
 
 /**
@@ -11,7 +12,7 @@ interface MyComponentProps {
  * @framerSupportedLayoutHeight auto
  */
 export default function BeautimaxCapabilities(props: MyComponentProps) {
-    const { title } = props
+    const { title, items } = props
     return (
         <section id="capabilities" className="section capabilities-section">
             <div className="beautimax-shell">
@@ -19,7 +20,7 @@ export default function BeautimaxCapabilities(props: MyComponentProps) {
                     <h2 className="section-title">{title}</h2>
                 </div>
                 <div className="cap-grid">
-                    {capabilities.map((item) => (
+                    {items.map((item) => (
                         <article key={item.number} className="capability">
                             <div className="cap-image">
                                 <img className="img-full" src={item.image} alt={item.alt} />

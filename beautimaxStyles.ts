@@ -10,6 +10,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .mono{font-family:"SFMono-Regular",Menlo,Consolas,monospace;letter-spacing:.08em}
 .muted{opacity:.82}
 h1,h2,h3,p,figure{margin:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .section{position:relative;padding:clamp(76px,6vw,104px) 0;scroll-margin-top:0}
 .section-title,.market-title,.network-title{font-size:clamp(38px,3.35vw,64px);line-height:.96;letter-spacing:-.055em;text-wrap:balance}
 .card-copy{font-size:clamp(15px,1.05vw,20px);line-height:1.48}
@@ -36,6 +37,9 @@ h1,h2,h3,p,figure{margin:0}
 .nav-links a.active::after{content:"";position:absolute;left:50%;bottom:-10px;width:4px;height:4px;border-radius:50%;background:#1d55c5;transform:translateX(-50%)}
 .nav-cta{display:inline-flex;min-width:172px;min-height:42px;padding:9px 17px;font-size:12px;box-shadow:none}
 .nav-cta::after{font-size:17px}
+.language-picker{position:relative;display:flex;flex:0 0 auto;align-items:center}
+.language-picker select{height:42px;min-width:58px;padding:0 22px 0 10px;border:1px solid rgba(16,16,15,.16);border-radius:7px;background:rgba(247,245,238,.62);color:#10100f;font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:11px;font-weight:700;letter-spacing:.06em;cursor:pointer}
+.language-picker select:focus-visible{outline:2px solid rgba(29,85,197,.55);outline-offset:3px}
 .mobile-toggle{display:none;min-height:44px;padding:0;border:0;background:transparent;color:#10100f;font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:12px;letter-spacing:.12em}
 .mobile-toggle:focus-visible{outline:2px solid rgba(29,85,197,.55);outline-offset:4px;border-radius:6px}
 .drawer{display:none;padding:12px 22px 18px;flex-direction:column;background:rgba(247,245,238,.94);border:1px solid rgba(255,255,255,.72);border-radius:24px;margin-top:8px;box-shadow:0 14px 38px rgba(36,38,45,.12);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
@@ -611,6 +615,7 @@ h1,h2,h3,p,figure{margin:0}
   .brand{gap:9px;font-size:14px;letter-spacing:.14em}
   .brand img{width:20px;height:38px}
   .nav-links,.nav-cta{display:none}
+  .language-picker select{height:44px;min-width:56px;padding-inline:8px;font-size:11px}
   .mobile-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:48px;min-height:48px;padding:0 4px;font-size:11px}
   .drawer{margin-top:6px;padding:8px 18px 14px;border-radius:14px}
   .drawer a{min-height:48px;font-size:12px}

@@ -4,7 +4,10 @@ import { beautimaxAssets } from "../beautimaxData"
 
 interface MyComponentProps {
     title: string
+    body: string
     ctaLabel: string
+    artworkAlt: string
+    footer: string
 }
 
 /**
@@ -12,14 +15,14 @@ interface MyComponentProps {
  * @framerSupportedLayoutHeight auto
  */
 export default function BeautimaxContact(props: MyComponentProps) {
-    const { title, ctaLabel } = props
+    const { title, body, ctaLabel, artworkAlt, footer } = props
     return (
         <section id="contact" className="section contact-section">
             <div className="beautimax-shell">
                 <div className="contact-layout">
                     <div className="contact-copy">
                         <h2 className="section-title">{title}</h2>
-                        <p className="contact-subcopy">From market entry to daily execution, let&apos;s define the right operating model for your brand.</p>
+                        <p className="contact-subcopy">{body}</p>
                         <a className="btn contact-cta" href="mailto:hello@beautimax.id">
                             {ctaLabel}
                         </a>
@@ -28,13 +31,13 @@ export default function BeautimaxContact(props: MyComponentProps) {
                         <img
                             className="img-full contact-art"
                             src={beautimaxAssets.planes}
-                            alt="Paper planes visual representing partnership outreach"
+                            alt={artworkAlt}
                         />
                         <img className="contact-monogram" src={beautimaxAssets.monogram} alt="" aria-hidden="true" />
                     </div>
                 </div>
                 <div className="footer mono">
-                    COPYRIGHT 2026 BEAUTIMAX©. ALL RIGHTS RESERVED.
+                    {footer}
                 </div>
             </div>
         </section>

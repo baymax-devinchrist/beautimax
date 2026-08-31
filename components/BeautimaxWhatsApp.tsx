@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function BeautimaxWhatsApp() {
+export default function BeautimaxWhatsApp({ label }: { label: string }) {
     const [visible, setVisible] = useState(false)
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function BeautimaxWhatsApp() {
             href="https://wa.me/6285880011990"
             target="_blank"
             rel="noreferrer"
-            aria-label="Chat with Beautimax on WhatsApp"
+            aria-label={label}
         >
             <span className="whatsapp-status" aria-hidden="true" />
             <svg viewBox="0 0 32 32" aria-hidden="true">

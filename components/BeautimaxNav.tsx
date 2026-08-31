@@ -1,13 +1,21 @@
 // User request: Create a clean Framer React/TypeScript code-only implementation of the approved responsive Beautimax Home page with reusable section files.
 import { addPropertyControls, ControlType } from "../framerShim"
-import { startTransition, useCallback, useEffect, useState } from "react"
-import { beautimaxAssets, navItems } from "../beautimaxData"
-
-const primaryNavItems = navItems.filter((item) => item.href !== "#contact")
+import { startTransition, useCallback, useEffect, useMemo, useState } from "react"
+import { beautimaxAssets, type NavItem } from "../beautimaxData"
+import { languageOptions, type Language } from "../beautimaxTranslations"
 
 interface MyComponentProps {
     brandLabel: string
     buttonLabel: string
+    items: NavItem[]
+    language: Language
+    languageLabel: string
+    menuLabel: string
+    closeLabel: string
+    primaryNavigationLabel: string
+    mobileNavigationLabel: string
+    toggleMenuLabel: string
+    onLanguageChange: (language: Language) => void
 }
 
 /**
@@ -15,7 +23,20 @@ interface MyComponentProps {
  * @framerSupportedLayoutHeight auto
  */
 export default function BeautimaxNav(props: MyComponentProps) {
-    const { brandLabel, buttonLabel } = props
+    const {
+        brandLabel,
+        buttonLabel,
+        items,
+        language,
+        languageLabel,
+        menuLabel,
+        closeLabel,
+        primaryNavigationLabel,
+        mobileNavigationLabel,
+        toggleMenuLabel,
+        onLanguageChange,
+    } = props
+    const primaryNavItems = useMemo(() => items.filter((item) => item.href !== "#contact"), [items])
     const [open, setOpen] = useState(false)
     const [compact, setCompact] = useState(false)
     const [activeHref, setActiveHref] = useState("#home")
@@ -48,7 +69,7 @@ export default function BeautimaxNav(props: MyComponentProps) {
             window.removeEventListener("scroll", updateScroll)
             observer.disconnect()
         }
-    }, [])
+    }, [primaryNavItems])
     const smoothNavigate = useCallback((href: string) => {
         if (typeof window !== "undefined") {
             const node = document.querySelector(href)
@@ -74,7 +95,7 @@ export default function BeautimaxNav(props: MyComponentProps) {
                         <img src={beautimaxAssets.monogram} alt="" aria-hidden="true" />
                         {brandLabel}
                     </a>
-                    <nav className="nav-links" aria-label="Primary">
+                    <nav className="nav-links" aria-label={primaryNavigationLabel}>
                         {primaryNavItems.map((item) => (
                             <a className={activeHref === item.href ? "active" : ""} key={item.href} href={item.href} onClick={(event) => {
                                 event.preventDefault()
@@ -84,6 +105,18 @@ export default function BeautimaxNav(props: MyComponentProps) {
                             </a>
                         ))}
                     </nav>
+                    <label className="language-picker">
+                        <span className="sr-only">{languageLabel}</span>
+                        <select
+                            aria-label={languageLabel}
+                            value={language}
+                            onChange={(event) => onLanguageChange(event.target.value as Language)}
+                        >
+                            {languageOptions.map((option) => (
+                                <option key={option.value} value={option.value}>{option.label}</option>
+                            ))}
+                        </select>
+                    </label>
                     <a className="btn nav-cta" href="#contact" onClick={(event) => {
                         event.preventDefault()
                         smoothNavigate("#contact")
@@ -92,17 +125,17 @@ export default function BeautimaxNav(props: MyComponentProps) {
                     </a>
                     <button
                         className="mobile-toggle"
-                        aria-label="Toggle menu"
+                        aria-label={toggleMenuLabel}
                         aria-expanded={open}
                         aria-controls="beautimax-mobile-navigation"
                         onClick={toggleMenu}
                         type="button"
                     >
-                        {open ? "Close" : "Menu"}
+                        {open ? closeLabel : menuLabel}
                     </button>
                 </div>
                 {open && (
-                    <nav id="beautimax-mobile-navigation" className="drawer" aria-label="Mobile navigation">
+                    <nav id="beautimax-mobile-navigation" className="drawer" aria-label={mobileNavigationLabel}>
                         {primaryNavItems.map((item) => (
                             <a key={item.href} href={item.href} onClick={(event) => {
                                 event.preventDefault()
