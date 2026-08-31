@@ -10,11 +10,18 @@ import {
     type KeyboardEvent,
     type TouchEvent,
 } from "react"
-import { beautimaxAssets, brandSlides } from "../beautimaxData"
+import { beautimaxAssets, type BrandSlide } from "../beautimaxData"
 
 interface MyComponentProps {
     title: string
     body: string
+    slides: BrandSlide[]
+    carouselLabel: string
+    previousLabel: string
+    nextLabel: string
+    slideLabel: string
+    phoneLabel: string
+    phoneAlt: string
 }
 
 /**
@@ -22,16 +29,16 @@ interface MyComponentProps {
  * @framerSupportedLayoutHeight auto
  */
 export default function BeautimaxBrandExperience(props: MyComponentProps) {
-    const { title, body } = props
+    const { title, body, slides, carouselLabel, previousLabel, nextLabel, slideLabel, phoneLabel, phoneAlt } = props
     const [index, setIndex] = useState(0)
     const [isInView, setIsInView] = useState(true)
     const touchStartX = useRef<number | null>(null)
     const carouselRef = useRef<HTMLDivElement | null>(null)
     const isStatic = useIsStaticRenderer()
-    const slideCount = useMemo(() => brandSlides.length, [])
+    const slideCount = slides.length
     const orderedSlides = useMemo(
-        () => brandSlides.map((_, offset) => brandSlides[(index + offset) % slideCount]),
-        [index, slideCount]
+        () => slides.map((_, offset) => slides[(index + offset) % slideCount]),
+        [index, slideCount, slides]
     )
 
     useEffect(() => {
@@ -124,7 +131,7 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
                             onKeyDown={onKeyDown}
                             onTouchStart={onTouchStart}
                             onTouchEnd={onTouchEnd}
-                            aria-label="Brand experience carousel"
+                            aria-label={carouselLabel}
                         >
                             <div className="slides">
                                 {orderedSlides.map((slide) => (
@@ -136,25 +143,25 @@ export default function BeautimaxBrandExperience(props: MyComponentProps) {
                         </div>
                         <div className="carousel-meta">
                             <div className="carousel-nav">
-                                <button className="icon-btn" aria-label="Previous slide" onClick={prev} type="button">
+                                <button className="icon-btn" aria-label={previousLabel} onClick={prev} type="button">
                                     ←
                                 </button>
-                                {brandSlides.map((slide, dotIndex) => (
+                                {slides.map((slide, dotIndex) => (
                                     <button
                                         key={slide.title}
                                         className={`dot ${dotIndex === index ? "active" : ""}`}
-                                        aria-label={`Go to slide ${dotIndex + 1}`}
+                                        aria-label={`${slideLabel} ${dotIndex + 1}`}
                                         type="button"
                                         onClick={() => goTo(dotIndex)}
                                     />
                                 ))}
-                                <button className="icon-btn" aria-label="Next slide" onClick={next} type="button">
+                                <button className="icon-btn" aria-label={nextLabel} onClick={next} type="button">
                                     →
                                 </button>
                             </div>
                         </div>
-                        <aside className="phone-frame" aria-label="Phone commerce preview">
-                            <img src={beautimaxAssets.phone} alt="Phone preview of beauty commerce experience" />
+                        <aside className="phone-frame" aria-label={phoneLabel}>
+                            <img src={beautimaxAssets.phone} alt={phoneAlt} />
                         </aside>
                     </div>
                 </div>
